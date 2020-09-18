@@ -44,7 +44,7 @@ public class ResourceServerConfig
         // authenticated = any authenticated, signed in, user
         // hasAnyRole = must be authenticated and be assigned this role!
         http.authorizeRequests()
-                .antMatchers("/",
+                .antMatchers("/","/login",
                              "/h2-console/**",
                              "/swagger-resources/**",
                              "/swagger-resource/**",
