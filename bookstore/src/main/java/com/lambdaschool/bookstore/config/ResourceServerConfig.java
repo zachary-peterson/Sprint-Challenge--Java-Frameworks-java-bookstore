@@ -1,6 +1,7 @@
 package com.lambdaschool.bookstore.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -43,7 +44,7 @@ public class ResourceServerConfig
         // authenticated = any authenticated, signed in, user
         // hasAnyRole = must be authenticated and be assigned this role!
         http.authorizeRequests()
-                .antMatchers("/",
+                .antMatchers("/","/login",
                              "/h2-console/**",
                              "/swagger-resources/**",
                              "/swagger-resource/**",
@@ -52,12 +53,21 @@ public class ResourceServerConfig
                              "/webjars/**",
                              "/createnewuser")
                 .permitAll()
+                .antMatchers(HttpMethod.POST,
+                    "/books/**")
+                .hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.PUT,
+                    "/books/**")
+                .hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE,
+                    "/books/**")
+                .hasAnyRole("ADMIN")
                 .antMatchers("/users/**",
                              "/useremails/**",
                              "/oauth/revoke-token",
                              "/logout")
                 .authenticated()
-                .antMatchers("/roles/**")
+                .antMatchers("/roles/**", "/books/**")
                 .hasAnyRole("ADMIN", "DATA")
                 .and()
                 .exceptionHandling()

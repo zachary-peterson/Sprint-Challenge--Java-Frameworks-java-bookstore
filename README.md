@@ -50,9 +50,30 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Can you explain exception handling in your application?
+
+  Exception handling can come in various forms, from not being able to find a resource, to inding a resource, but with information different than you were expecting. Exception handling allows you to give the client a clearer picture as to what exactly is going wrong, or what nformation they provided may be causing the error. 
+
 2. Can you explain your user authentication flow?
+
+  Authenticate: Ensuring the client is who they say are
+
+  Authorize: Verifying the privliges the clients account type has access to. 
+
+  Two separate processes, but often get combined into one step.
+
 3. Can you show me your unit tests and describe how they work?
+
+  Unit Tests are smaller automated tests, written once and repeatable. 
+
 4. Can you show how you deployed your application to a cloud service with a persistent database?
+
+  IN SEED DATA:
+  // Component
+
+  IN APP.PROPS:
+  ...hibernate.ddl-auto=update
+  ...datasource.initialization=never
+
 
 ## Instructions
 
