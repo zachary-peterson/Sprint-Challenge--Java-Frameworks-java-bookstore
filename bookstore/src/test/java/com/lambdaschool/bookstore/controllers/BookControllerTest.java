@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -26,8 +27,8 @@ import java.util.List;
  * Due to security being in place, we have to switch out WebMvcTest for SpringBootTest
  * @WebMvcTest(value = BookController.class)
  */
-@SpringBootTest(classes = BookstoreApplication.class)
-
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 /****
  * This is the user and roles we will use to test!
  */

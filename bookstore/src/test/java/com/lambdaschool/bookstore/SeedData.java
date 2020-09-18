@@ -198,12 +198,12 @@ public class SeedData
                 .add(new Wrote(a4, new Book()));
         b5 = bookService.save(b5);
 
-//        System.out.println("***** BOOK IDs *****");
-//        System.out.println(b1.getTitle() + " " + b1.getBookid());
-//        System.out.println(b2.getTitle() + " " + b2.getBookid());
-//        System.out.println(b3.getTitle() + " " + b3.getBookid());
-//        System.out.println(b4.getTitle() + " " + b4.getBookid());
-//        System.out.println(b5.getTitle() + " " + b5.getBookid());
+        System.out.println("***** BOOK IDs *****");
+        System.out.println(b1.getTitle() + " " + b1.getBookid());
+        System.out.println(b2.getTitle() + " " + b2.getBookid());
+        System.out.println(b3.getTitle() + " " + b3.getBookid());
+        System.out.println(b4.getTitle() + " " + b4.getBookid());
+        System.out.println(b5.getTitle() + " " + b5.getBookid());
 //
 //        System.out.println();
 //        System.out.println("***** Section Ids *****");
